@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1">
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/startBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.07"
         android:text="开始" />
 
     <Button
         android:id="@+id/stopBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.07"
+        android:layout_below="@id/startBtn"
         android:text="停止并退出" />
 
     <TextView
         android:id="@+id/spped_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/stopBtn"
         android:text="速度 x1 (默认1，不同机器不一样)" />
 
     <SeekBar
@@ -30,7 +29,27 @@
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/spped_text"
         android:max="1000"
         android:progress="500" />
 
-</LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/version"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="需要开启悬浮窗权限"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="v0.0.1"
+        android:textSize="13sp" />
+
+</RelativeLayout>
